@@ -4,16 +4,13 @@
 
   require_once('array_clientes.php');
 
-
   $verCliente = new Cliente($clientes);
 
-  if(isset($_GET['ordem'])){
+  if(!isset($_GET['ordem'])){
     $ordem = 'asc';
   }else{
     $ordem = $_GET['ordem'];
   }
-//$verCliente->mostraCliente(0);
-
 
 ?>
 <!DOCTYPE html>
@@ -59,11 +56,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Site Simples</a>
+          <a class="navbar-brand" href="/">PHP OO</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Lista Cliente</a></li>
+            <li class="active"><a href="/lista_clientes">Lista Cliente</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -75,19 +72,19 @@
 
       <ul class="nav nav-tabs" role="tablist">
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="?ordem=asc">
           Ordenar <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Acendente</a></li>
-          <li><a href="#">Decrecente</a></li>
+          <li><a href="?ordem=asc">ascendente</a></li>
+          <li><a href="?ordem=desc">decrecente</a></li>
         </ul>
       </li>
     </ul>
       
     <!-- lista clientes -->
     <?php
-      $verCliente->listaClientes('asc');
+      $verCliente->listaClientes($ordem);
     ?>
     
 

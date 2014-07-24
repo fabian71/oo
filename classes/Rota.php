@@ -19,12 +19,9 @@ class Rota
 		// Remove o primeiro item vazio da array
 		$removeArray = array_shift($pathArray);
 		
-		//print_r($pathArray);
 		$paginas = ['mostra_cliente' => 'pages/mostra_cliente.php',
 					'lista_clientes'  => 'pages/lista_clientes.php'
 				   ];
-
-
 		
 		//carrega o home
 		if(!$pathArray[0]){
@@ -38,7 +35,6 @@ class Rota
 				array_walk($paginas, function ($item, $key) use($pathArray){
 					if($pathArray[0] == $key){		
 						require_once($item);
-						//break;
 					}
 				});		
 
@@ -47,9 +43,7 @@ class Rota
 				require_once('pages/404.php');
 			}
 
-
 		}else{
-
 				header('HTTP/1.0 404 Not Found');
 				require_once('pages/404.php');
 		}

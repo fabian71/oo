@@ -41,11 +41,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Site Simples</a>
+          <a class="navbar-brand" href="/">PHP OO</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Lista Cliente</a></li>
+            <li class="active"><a href="/lista_clientes">Lista Cliente</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,8 +53,8 @@
 
     <div class="container">
 
-    	<h2>404</h2>
-      
+    	<h1>404</h1>    
+
     </div><!-- /.container -->
 
 

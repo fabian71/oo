@@ -1,3 +1,24 @@
+<?php
+  
+  require_once('Classes/Cliente.php');
+
+  require_once('array_clientes.php');
+
+  $verCliente = new Cliente($clientes);
+
+  if(!isset($_GET['id'])){
+      echo "<script>
+      window.location.href = '/404';
+      </script>";
+      exit;
+  }else{
+    $id = $_GET['id'];
+  }
+
+ 
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,11 +62,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Site Simples</a>
+          <a class="navbar-brand" href="/">PHP OO</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Lista Cliente</a></li>
+            <li class="active"><a href="/lista_clientes">Lista Cliente</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,11 +74,20 @@
 
     <div class="container">
 
-    	<h3>Mostra cliente</h3>
+    <h3></span> Informações do clientes</h3>
 
-      
-    <!-- lista clientes -->
-    mostra cliente espedifico
+    <div class="panel panel-default">
+      <div class="panel-body">
+        
+            <!-- mostra -->
+            <?php
+               $verCliente->mostraCliente($id);
+            ?>
+
+      </div>
+    </div>  
+    <!-- Standard button -->
+    <button type="button" onClick="javascript:history.go(-1)" class="btn btn-default">Voltar</button>
     
 
     </div><!-- /.container -->
